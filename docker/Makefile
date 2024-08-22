@@ -10,7 +10,8 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag ros:aloam -f ./Dockerfile ..
+	# @docker build --tag ros:aloam -f ./Dockerfile ..
+	@docker build --network host -f Dockerfile -t ros:aloam .
 
 clean:
 	@docker rmi -f ros:aloam
